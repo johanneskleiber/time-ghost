@@ -1,0 +1,13 @@
+time-ghost-app/time-ghost-app/obj/
+time-ghost-app/time-ghost-app/bin/
+
+time-ghost-app/v16/
+
+time-ghost-app/time-ghost-app.Tests.xUnit/obj/
+time-ghost-app/time-ghost-app.Tests.xUnit/bin/
+
+time-ghost-app/.vs/
+
+time-ghost-app/time-ghost-app.Core/bin/
+
+time-ghost-app/time-ghost-app.Core/obj/

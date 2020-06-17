@@ -1,2 +1,0 @@
-C:\Users\johannes.kleiber\Documents\Sources\time-ghost\time-ghost-app\time-ghost-app.Core\obj\Debug\netstandard2.0\time-ghost-app.Core.AssemblyInfoInputs.cache
-C:\Users\johannes.kleiber\Documents\Sources\time-ghost\time-ghost-app\time-ghost-app.Core\obj\Debug\netstandard2.0\time-ghost-app.Core.AssemblyInfo.cs
