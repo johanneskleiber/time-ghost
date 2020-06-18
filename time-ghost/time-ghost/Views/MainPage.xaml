@@ -15,6 +15,23 @@
                 The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
                 Place your content here.
             -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <StackPanel x:Name="MondayStackPanel" Grid.Row="0" Grid.Column="0" />
+            <StackPanel x:Name="TuesdayStackPanel" Grid.Row="0" Grid.Column="0" />
+            <StackPanel x:Name="WednesdayStackPanel" Grid.Row="0" Grid.Column="0" />
+            <StackPanel x:Name="ThursdayStackPanel" Grid.Row="0" Grid.Column="0" />
+            <StackPanel x:Name="FridayStackPanel" Grid.Row="0" Grid.Column="0" />
         </Grid>
     </Grid>
 </Page>

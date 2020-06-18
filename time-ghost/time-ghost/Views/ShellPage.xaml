@@ -20,6 +20,7 @@
             IsBackEnabled="{x:Bind ViewModel.IsBackEnabled, Mode=OneWay}"
             SelectedItem="{x:Bind ViewModel.Selected, Mode=OneWay}"
             IsSettingsVisible="True"
+            PaneDisplayMode="LeftCompact"
             Background="{ThemeResource SystemControlBackgroundAltHighBrush}">
             <winui:NavigationView.MenuItems>
                 <!--
