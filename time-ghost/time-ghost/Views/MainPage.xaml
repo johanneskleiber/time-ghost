@@ -9,29 +9,31 @@
     prismMvvm:ViewModelLocator.AutoWireViewModel="True" 
     mc:Ignorable="d">
     <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
-        <Grid
-            Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
+        <Grid Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
             <!--
                 The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
                 Place your content here.
             -->
+<!--
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
                 <RowDefinition />
             </Grid.RowDefinitions>
-
-            <StackPanel x:Name="MondayStackPanel" Grid.Row="0" Grid.Column="0" />
-            <StackPanel x:Name="TuesdayStackPanel" Grid.Row="0" Grid.Column="0" />
-            <StackPanel x:Name="WednesdayStackPanel" Grid.Row="0" Grid.Column="0" />
-            <StackPanel x:Name="ThursdayStackPanel" Grid.Row="0" Grid.Column="0" />
-            <StackPanel x:Name="FridayStackPanel" Grid.Row="0" Grid.Column="0" />
+-->
+            <ItemsControl Width="100" Height="100" Background="Red" x:Name="Monday" ItemsSource="{x:Bind ViewModel.MondayTimers}" Grid.Row="0" Grid.Column="0" ItemTemplate="{StaticResource CompactTimerTemplate}" />
+<!--
+            <ItemsControl x:Name="Tuesday" Grid.Row="0" Grid.Column="0" />
+            <ItemsControl x:Name="Wednesday" Grid.Row="0" Grid.Column="0" />
+            <ItemsControl x:Name="Thursday" Grid.Row="0" Grid.Column="0" />
+            <ItemsControl x:Name="Friday" Grid.Row="0" Grid.Column="0" />
+-->
         </Grid>
     </Grid>
 </Page>
