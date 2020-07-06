@@ -7,5 +7,6 @@ namespace time_ghost.Core.Models
     public class Timer
     {
         public string Description { get; set; }
+        public Guid Id { get; set; }
     }
 }
