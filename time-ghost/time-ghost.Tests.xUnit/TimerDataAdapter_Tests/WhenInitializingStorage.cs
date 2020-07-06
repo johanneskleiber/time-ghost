@@ -18,9 +18,6 @@ namespace time_ghost.Tests.TimerDataAdapter_Tests
             sut.InitializeStorage();
 
             // Assert
-            Windows.Storage.StorageFolder roamingFolder =
-                Windows.Storage.ApplicationData.Current.RoamingFolder;
-
             Assert.Equal("{\"timerData\": { \"timers\": []}}", await sut.LoadDataRawAsync());
         }
     }
