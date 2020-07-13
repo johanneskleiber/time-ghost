@@ -138,6 +138,8 @@
     </Compile>
     <Compile Include="Behaviors\NavigationViewHeaderBehavior.cs" />
     <Compile Include="Behaviors\NavigationViewHeaderMode.cs" />
+    <Compile Include="DataAccess\IStorageManager.cs" />
+    <Compile Include="DataAccess\StorageManager.cs" />
     <Compile Include="DataAccess\TimerDataAdapter.cs" />
     <Compile Include="Helpers\EnumToBooleanConverter.cs" />
     <Compile Include="Helpers\NavHelper.cs" />

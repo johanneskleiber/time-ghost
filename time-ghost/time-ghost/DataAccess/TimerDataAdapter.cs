@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Threading.Tasks;
 using time_ghost.Core.Models;
 using Windows.Storage;
@@ -8,37 +10,22 @@ namespace time_ghost.DataAccess
 {
     public class TimerDataAdapter
     {
-        private const string TIMER_STORAGE_FILE_NAME = "timerStorage.json";
+        public IStorageManager StorageManager { get; private set; }
 
-        private StorageFolder RoamingFolder { get { return ApplicationData.Current.RoamingFolder; } }
-
-        public async void InitializeStorage()
+        public TimerDataAdapter(IStorageManager storageManager = null)
         {
-            if (await RoamingFolder.TryGetItemAsync(TIMER_STORAGE_FILE_NAME) == null)
-            {
-                var emptyFile = await RoamingFolder.CreateFileAsync(
-                    TIMER_STORAGE_FILE_NAME,
-                    CreationCollisionOption.FailIfExists);
-                await FileIO.WriteTextAsync(emptyFile, "{\"timerData\": { \"timers\": []}}");
-            }
+            this.StorageManager = storageManager ?? new StorageManager();
         }
 
-        public Timer Load(Guid timerId)
+        public async Task<Timer> GetTimerAsync(Guid timerId)
         {
             if (timerId == null || Guid.Empty == timerId)
             {
                 return null;
             }
 
-            // TODO 
-
-            return new Timer { Id = timerId };
-        }
-
-        internal async Task<string> LoadDataRawAsync()
-        {
-            var timerStorageFile = await RoamingFolder.GetFileAsync(TIMER_STORAGE_FILE_NAME);
-            return await FileIO.ReadTextAsync(timerStorageFile);
+            return JsonConvert.DeserializeObject<Timer>(
+                await this.StorageManager.LoadItem(timerId));
         }
     }
 }
