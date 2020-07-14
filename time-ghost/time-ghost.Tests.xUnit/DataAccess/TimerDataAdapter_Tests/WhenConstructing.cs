@@ -8,7 +8,7 @@ using time_ghost.Core.Models;
 using time_ghost.DataAccess;
 using Xunit;
 
-namespace time_ghost.Tests.xUnit.DataAccess.TimerDataAdapter_Tests
+namespace time_ghost.Tests.DataAccess.TimerDataAdapter_Tests
 {
     public class WhenConstructing
     {

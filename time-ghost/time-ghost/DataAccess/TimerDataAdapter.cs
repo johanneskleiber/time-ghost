@@ -1,14 +1,11 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Threading.Tasks;
 using time_ghost.Core.Models;
-using Windows.Storage;
-using Windows.Storage.Streams;
 
 namespace time_ghost.DataAccess
 {
-    public class TimerDataAdapter
+    public class TimerDataAdapter : ITimerDataAdapter
     {
         public IStorageManager StorageManager { get; private set; }
 
@@ -24,8 +21,17 @@ namespace time_ghost.DataAccess
                 return null;
             }
 
-            return JsonConvert.DeserializeObject<Timer>(
-                await this.StorageManager.LoadItem(timerId));
+            return JsonConvert.DeserializeObject<Timer>(await this.StorageManager.LoadItemAsync(timerId));
+        }
+
+        public async void SetTimerAsync(Timer timer)
+        {
+            if (timer == null|| timer.Id == null || timer.Id == Guid.Empty)
+            {
+                return;
+            }
+
+            this.StorageManager.SetItemAsync(JsonConvert.SerializeObject(timer));
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using time_ghost.DataAccess;
 using Xunit;
 
-namespace time_ghost.Tests.xUnit.DataAccess.StorageManager_Tests
+namespace time_ghost.Tests.DataAccess.StorageManager_Tests
 {
     public class WhenLoadingItems
     {
@@ -23,7 +23,7 @@ namespace time_ghost.Tests.xUnit.DataAccess.StorageManager_Tests
             );
 
             // Act
-            var timerJson = await sut.LoadItem(expectedId);
+            var timerJson = await sut.LoadItemAsync(expectedId);
             var jTimer = JObject.Parse(timerJson);
             var actualId = (string)jTimer["id"];
 

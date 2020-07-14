@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Threading.Tasks;
-using time_ghost.Core.Models;
 
 namespace time_ghost.DataAccess
 {
     public interface IStorageManager
     {
-        Task<string> LoadItem(Guid id);
+        Task<string> LoadItemAsync(Guid id);
+
+        Task<string> LoadDataRawAsync();
+
+        void SetItemAsync(string item);
 
         void InitializeStorage();
     }

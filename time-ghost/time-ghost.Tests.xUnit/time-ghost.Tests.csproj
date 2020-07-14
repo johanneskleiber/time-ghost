@@ -7,7 +7,7 @@
     <ProjectGuid>{53ADFC76-FADB-41A6-ABC7-CEF5C74FEBFC}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>time_ghost.Tests.xUnit</RootNamespace>
+    <RootNamespace>time_ghost.Tests</RootNamespace>
     <AssemblyName>time-ghost.Tests.xUnit</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
@@ -118,6 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess\StorageManager_Tests\WhenLoadingItems.cs" />
+    <Compile Include="DataAccess\TimerDataAdapter_Tests\WhenSettingTimerData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataAccess\TimerDataAdapter_Tests\WhenConstructing.cs" />
     <Compile Include="DataAccess\StorageManager_Tests\WhenInitializingStorage.cs" />

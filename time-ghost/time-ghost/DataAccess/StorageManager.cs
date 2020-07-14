@@ -1,10 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using time_ghost.Core.Models;
 using Windows.Storage;
 
 namespace time_ghost.DataAccess
@@ -26,7 +23,7 @@ namespace time_ghost.DataAccess
             }
         }
 
-        public async Task<string> LoadItem(Guid id)
+        public async Task<string> LoadItemAsync(Guid id)
         {
             var timerData = await LoadDataRawAsync();
             var jTimerData = JObject.Parse(timerData);
@@ -40,11 +37,15 @@ namespace time_ghost.DataAccess
             ).FirstOrDefault();
         }
 
-        internal virtual async Task<string> LoadDataRawAsync()
+        public virtual async Task<string> LoadDataRawAsync()
         {
             var timerStorageFile = await RoamingFolder.GetFileAsync(TIMER_STORAGE_FILE_NAME);
             return await FileIO.ReadTextAsync(timerStorageFile);
         }
 
+        public void SetItemAsync(string item)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
